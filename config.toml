@@ -2,7 +2,7 @@ title = "Pulimento's blog"
 theme = "hugo-creative-portfolio-theme"
 languageCode = "es-es"
 
-
+baseurl = "https://mybeautifulfreeblog.firebaseapp.com/"
 
 #####
 
