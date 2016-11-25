@@ -2,7 +2,7 @@
 date = "2016-11-05T19:41:01+05:30"
 title = "Avión 2"
 draft = false
-image = "img/portfolio/plane2.jpg"
+image = "img/portfolio/plane2.webp"
 showonlyimage = false
 weight = 1
 +++

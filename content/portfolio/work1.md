@@ -1,7 +1,7 @@
 +++
 showonlyimage = true
 draft = false
-image = "img/portfolio/plane1.jpg"
+image = "img/portfolio/plane1.webp"
 date = "2016-11-05T18:25:22+05:30"
 title = "Avión 1"
 weight = 0
