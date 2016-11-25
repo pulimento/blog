@@ -1,10 +1,8 @@
-image: publysher/hugo
+image: pulimento/hugo-firebase
 
 pages:
   script:
   - hugo
-  - sudo apt-get install -y nodejs
-  - npm install firebase-tools
   - firebase use --token $FIREBASE_DEPLOY_KEY alias
   - firebase deploy -m "Pipeline $CI_PIPELINE_ID, build $CI_BUILD_ID" --non-interactive --token $FIREBASE_DEPLOY_KEY
   artifacts:
