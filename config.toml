@@ -1,5 +1,5 @@
 title = "Pulimento's blog"
-theme = "hugo-creative-portfolio-theme"
+theme = "hugo-steam-theme"
 languageCode = "es-es"
 
 baseurl = "https://javipulido.com/"
@@ -13,47 +13,37 @@ disqusShortname = ""
 googleAnalytics = ""
 
 [params]
-  # Style options: default (pink), blue, green, pink, red, sea, violet
-  # Use custom.css for your custom styling
-  style = "default"
-  description = "Describe your website"
-  copyright = "&copy;2016 Your name or company"
-  sidebarAbout = [
-    "I am a creative illustrator and graphic designer with more than 10 years of experience.",
-    "Originally from Toronto, currently based in London."
-  ]
-  # Contact page
-     # Since this template is static, the contact form uses www.formspree.io as a
-     # proxy. The form makes a POST request to their servers to send the actual
-     # email. Visitors can send up to a 1000 emails each month for free.
-     #
-     # What you need to do for the setup?
-     #
-     # - set your email address under 'email' below
-     # - upload the generated site to your server
-     # - send a dummy email yourself to confirm your account
-     # - click the confirm link in the email from www.formspree.io
-     # - you're done. Happy mailing!
-  email = "you@yoursite.com"
+  title = "Hey Pulimento"
+  subtitle = "a minimal theme for ~~Ghost~~ Hugo"
+  copyright = "Released under the MIT license."
 
-  # Nav links in the side bar
-  [[params.navlinks]]
-  name = "Home"
-  url = ""
+  # You can choose between green, orange, red and blue.
+  themecolor = "green"
 
-  [[params.navlinks]]
-  name = "About"
-  url = "about/"
+  # Link custom assets relative to /static
+  favicon   = "favicon.ico"
+  customCSS = []
+  customJS  = []
 
-  [[params.navlinks]]
-  name = "Get in touch"
-  url = "contact/"
+  # To provide some metadata for search engines and the about section in the footer
+  # feel free to add a few information about you and your website.
+  name = "John Doe"
+  bio = "programmer - blogger - coffee aficionado"
+  description = "Your description of the blog"
+  
+  # Link your social networks (optional)
+  location = ""
+  twitter = "spf13"
+  linkedin = ""
+  googleplus = ""
+  facebook = ""
+  instagram = ""
+  github = "spf13"
+  gitlab = ""
+  bitbucket = ""
 
-  [params.social]
-  facebook     = "full page or profile url"
-  googleplus   = "full profile url"
-  email        = "email@example.com"
-  twitter      = "full profile url"
-  linkedIn     = "full profile url"
-  stackverflow = "full profile url"
-  instagram    = "full profile url"
+  # Customize or translate the strings
+  keepReadingStr = "Keep reading"
+  backtotopStr = "Back to top"
+  shareStr = "Share"
+  pageNotFoundTitle = "404 - Page not found"
