@@ -3,6 +3,7 @@ image: pulimento/hugo-firebase
 pages:
   stage: deploy
   script:
+  - node -v
   - hugo version
   - hugo
   - firebase use --token $FIREBASE_DEPLOY_KEY alias
