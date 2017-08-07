@@ -3,6 +3,7 @@ image: pulimento/hugo-firebase
 pages:
   stage: deploy
   script:
+  - hugo version
   - hugo
   - firebase use --token $FIREBASE_DEPLOY_KEY alias
   - firebase deploy -m "Pipeline $CI_PIPELINE_ID, build $CI_BUILD_ID" --non-interactive --token $FIREBASE_DEPLOY_KEY
