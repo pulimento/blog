@@ -1,4 +1,4 @@
-title = "Pulimento's blog"
+#title = "Pulimento's blog"
 theme = "hugo-theme-pixyll"
 languageCode = "es-es"
 
@@ -16,10 +16,7 @@ canonifyurls = true
   tag = "tags"
 
 [params]
-  search_engine = true
-  google_analytics_id = ""
-  twitter_username = "pulimento"
-  paginate = true
+
 
 # Enable comments by entering your Disqus shortname
 #disqusShortname = ""
@@ -55,6 +52,11 @@ googleAnalytics = ""
   github = "spf13"
   gitlab = ""
   bitbucket = ""
+
+  search_engine = true
+  google_analytics_id = ""
+  twitter_username = "pulimento"
+  paginate = true
 
   # Customize or translate the strings
   keepReadingStr = "Keep reading"
