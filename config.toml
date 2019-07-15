@@ -1,14 +1,28 @@
 title = "Pulimento's blog"
-theme = "hugo-steam-theme"
+theme = "hugo-theme-pixyll"
 languageCode = "es-es"
 
-baseurl = "https://javipulido.com/"
+baseurl = "https://mybeautifulfreeblog.firebase.com/"
 
 #####
 
+contentdir = "content"
+publishdir = "public"
+builddrafts = false
+canonifyurls = true
+
+[indexes]
+  category = "categories"
+  tag = "tags"
+
+[params]
+  search_engine = true
+  google_analytics_id = ""
+  twitter_username = "pulimento"
+  paginate = true
 
 # Enable comments by entering your Disqus shortname
-disqusShortname = ""
+#disqusShortname = ""
 # Enable Google Analytics by entering your tracking code
 googleAnalytics = ""
 
