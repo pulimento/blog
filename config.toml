@@ -2,14 +2,14 @@
 theme = "hugo-theme-pixyll"
 languageCode = "es-es"
 
-baseurl = "https://mybeautifulfreeblog.firebase.com/"
+baseurl = "https://mybeautifulfreeblog.firebaseapp.com"
 
 #####
 
-contentdir = "content"
-publishdir = "public"
+#contentdir = "content"
+#publishdir = "public"
 builddrafts = false
-canonifyurls = true
+#canonifyurls = true
 
 [indexes]
   category = "categories"
