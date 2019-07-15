@@ -1,5 +1,8 @@
 image: pulimento/hugo-firebase
 
+variables:
+  GIT_SUBMODULE_STRATEGY: recursive
+
 pages:
   stage: deploy
   script:
