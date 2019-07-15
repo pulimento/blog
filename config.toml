@@ -1,66 +1,37 @@
-title = "Pulimento's blog"
-author = "adminauthor"
-theme = "hugo-theme-pixyll"
-languageCode = "es-es"
+archetypeDir           = "archetypes"
+author                 = "admin"
+baseUrl                = "https://mybeautifulfreeblog.firebaseapp.com"
+buildDrafts            = false
+relativeURLs           = true
+canonifyUrls           = true
+contentDir             = "content"
+languageCode           = "en-us"
+layoutDir              = "layouts"
+publishDir             = "public"
+theme                  = "hugo-theme-pixyll"
+themesDir              = "themes"
+title                  = "Pulimento's blog"
+enableEmoji            = true
+DefaultContentLanguage = "en"
+#disqusShortname        = ""
 
-baseurl = "https://mybeautifulfreeblog.firebaseapp.com"
+[Languages]
+[Languages.en]
+weight = 1
 
-#####
+[Languages.ru]
+weight = 2
 
-#contentdir = "content"
-#publishdir = "public"
-#archetypeDir = "archetypes"
-#layoutDir = "layouts"
-builddrafts = false
-enableEmoji = true
-#DefaultContentLanguage = "es"
+[blackfriday]
+angledQuotes = true
+hrefTargetBlank = true
 
 [indexes]
   category = "categories"
   tag = "tags"
 
-# Enable comments by entering your Disqus shortname
-#disqusShortname = ""
-# Enable Google Analytics by entering your tracking code
-googleAnalytics = ""
-
 [params]
-  #title = "Hey Pulimento"
-  #subtitle = "a minimal theme for ~~Ghost~~ Hugo"
-  copyright = "Released under the MITTTTT license."
-
-  # You can choose between green, orange, red and blue.
-  #themecolor = "green"
-
-  # Link custom assets relative to /static
-  favicon   = "favicon.ico"
-  customCSS = []
-  customJS  = []
-
-  # To provide some metadata for search engines and the about section in the footer
-  # feel free to add a few information about you and your website.
-  name = "John Doe"
-  bio = "programmer - blogger - coffee aficionado"
-  description = "Your description of the blog"
-  
-  # Link your social networks (optional)
-  #location = ""
-  #twitter = "spf13"
-  #linkedin = ""
-  #googleplus = ""
-  #facebook = ""
-  #instagram = ""
-  #github = "spf13"
-  #gitlab = ""
-  #bitbucket = ""
-
   search_engine = true
   #google_analytics_id = ""
-  twitter_username = "pulimento"
-  paginate = true
-
-  # Customize or translate the strings
-  #keepReadingStr = "Keep reading"
-  #backtotopStr = "Back to top"
-  #shareStr = "Share"
-  #pageNotFoundTitle = "404 - Page not found"
+  twitter_username = "username"
+  paginate = 5
