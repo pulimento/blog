@@ -7,13 +7,13 @@ baseurl = "https://mybeautifulfreeblog.firebaseapp.com"
 
 #####
 
-contentdir = "content"
-publishdir = "public"
-archetypeDir = "archetypes"
-layoutDir = "layouts"
+#contentdir = "content"
+#publishdir = "public"
+#archetypeDir = "archetypes"
+#layoutDir = "layouts"
 builddrafts = false
 enableEmoji = true
-DefaultContentLanguage = "es"
+#DefaultContentLanguage = "es"
 
 [indexes]
   category = "categories"
