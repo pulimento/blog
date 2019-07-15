@@ -1,0 +1,3 @@
+[submodule "themes/hugo-theme-pixyll-minimal"]
+	path = themes/hugo-theme-pixyll-minimal
+	url = git@github.com:pulimento/hugo-theme-pixyll-minimal.git
