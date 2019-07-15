@@ -1,5 +1,5 @@
 archetypeDir           = "archetypes"
-author                 = "admin"
+author                 = "Javi Pulido"
 baseUrl                = "https://mybeautifulfreeblog.firebaseapp.com"
 buildDrafts            = false
 relativeURLs           = true
@@ -8,9 +8,9 @@ contentDir             = "content"
 languageCode           = "en-us"
 layoutDir              = "layouts"
 publishDir             = "public"
-theme                  = "hugo-theme-pixyll"
+theme                  = "hugo-theme-pixyll-minimal"
 themesDir              = "themes"
-title                  = "Pulimento's blog"
+title                  = "Javi Pulido's blog"
 enableEmoji            = true
 DefaultContentLanguage = "en"
 #disqusShortname        = ""
@@ -19,7 +19,7 @@ DefaultContentLanguage = "en"
 [Languages.en]
 weight = 1
 
-[Languages.ru]
+[Languages.es]
 weight = 2
 
 [blackfriday]
@@ -31,7 +31,6 @@ hrefTargetBlank = true
   tag = "tags"
 
 [params]
-  search_engine = true
-  #google_analytics_id = ""
-  twitter_username = "username"
-  paginate = 5
+  google_analytics_id = "UA-27524292-4"
+  twitter_username = "pulimento"
+  paginate = 3
