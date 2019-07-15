@@ -1,4 +1,5 @@
-#title = "Pulimento's blog"
+title = "Pulimento's blog"
+author = admin
 theme = "hugo-theme-pixyll"
 languageCode = "es-es"
 
@@ -6,10 +7,13 @@ baseurl = "https://mybeautifulfreeblog.firebaseapp.com"
 
 #####
 
-#contentdir = "content"
-#publishdir = "public"
+contentdir = "content"
+publishdir = "public"
+archetypeDir = "archetypes"
+layoutDir = "layouts"
 builddrafts = false
-#canonifyurls = true
+enableEmoji = true
+DefaultContentLanguage = "es"
 
 [indexes]
   category = "categories"
@@ -21,12 +25,12 @@ builddrafts = false
 googleAnalytics = ""
 
 [params]
-  title = "Hey Pulimento"
-  subtitle = "a minimal theme for ~~Ghost~~ Hugo"
-  copyright = "Released under the MIT license."
+  #title = "Hey Pulimento"
+  #subtitle = "a minimal theme for ~~Ghost~~ Hugo"
+  copyright = "Released under the MITTTTT license."
 
   # You can choose between green, orange, red and blue.
-  themecolor = "green"
+  #themecolor = "green"
 
   # Link custom assets relative to /static
   favicon   = "favicon.ico"
@@ -40,23 +44,23 @@ googleAnalytics = ""
   description = "Your description of the blog"
   
   # Link your social networks (optional)
-  location = ""
-  twitter = "spf13"
-  linkedin = ""
-  googleplus = ""
-  facebook = ""
-  instagram = ""
-  github = "spf13"
-  gitlab = ""
-  bitbucket = ""
+  #location = ""
+  #twitter = "spf13"
+  #linkedin = ""
+  #googleplus = ""
+  #facebook = ""
+  #instagram = ""
+  #github = "spf13"
+  #gitlab = ""
+  #bitbucket = ""
 
   search_engine = true
-  google_analytics_id = ""
+  #google_analytics_id = ""
   twitter_username = "pulimento"
   paginate = true
 
   # Customize or translate the strings
-  keepReadingStr = "Keep reading"
-  backtotopStr = "Back to top"
-  shareStr = "Share"
-  pageNotFoundTitle = "404 - Page not found"
+  #keepReadingStr = "Keep reading"
+  #backtotopStr = "Back to top"
+  #shareStr = "Share"
+  #pageNotFoundTitle = "404 - Page not found"
