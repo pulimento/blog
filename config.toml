@@ -19,8 +19,8 @@ DefaultContentLanguage = "en"
 [Languages.en]
 weight = 1
 
-[Languages.es]
-weight = 2
+#[Languages.es]
+#weight = 2
 
 [blackfriday]
 angledQuotes = true
