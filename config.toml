@@ -1,18 +1,21 @@
-archetypeDir           = "archetypes"
+title                  = "Javi Pulido's blog"
 author                 = "Javi Pulido"
-baseUrl                = "https://mybeautifulfreeblog.firebaseapp.com"
+baseUrl                = "https://javipulido.com"
+theme                  = "hugo-theme-pixyll-minimal"
+
+archetypeDir           = "archetypes"
+contentDir             = "content"
+themesDir              = "themes"
+layoutDir              = "layouts"
+publishDir             = "public"
+
+languageCode           = "en"
 buildDrafts            = false
 relativeURLs           = true
 canonifyUrls           = true
-contentDir             = "content"
-languageCode           = "en-us"
-layoutDir              = "layouts"
-publishDir             = "public"
-theme                  = "hugo-theme-pixyll-minimal"
-themesDir              = "themes"
-title                  = "Javi Pulido's blog"
 enableEmoji            = true
 DefaultContentLanguage = "en"
+
 #disqusShortname        = ""
 
 [Languages]
