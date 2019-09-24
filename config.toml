@@ -2,6 +2,11 @@ title                  = "Javi Pulido's blog"
 author                 = "Javi Pulido"
 baseUrl                = "https://javipulido.com"
 theme                  = "hugo-theme-pixyll-minimal"
+pygmentsCodefences = true
+pygmentsStyle = "pygments"
+
+[permalinks]
+  post = "/:filename/"
 
 archetypeDir           = "archetypes"
 contentDir             = "content"
