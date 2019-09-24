@@ -1,8 +1,11 @@
 image: pulimento/hugo-firebase
 
-before_script:
-  - git submodule sync --recursive
-  - git submodule update --init --recursive
+ variables:
+   GIT_STRATEGY: fetch
+   GIT_SUBMODULE_STRATEGY: normal
+   GIT_CLEAN_FLAGS: -ffdx
+ before_script:
+   - git submodule update --init --recursive
 
 pages:
   stage: deploy
