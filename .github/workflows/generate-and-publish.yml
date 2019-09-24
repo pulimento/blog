@@ -1,0 +1,12 @@
+on: [push]
+name: Publish blog
+jobs:
+  build:
+    runs-on: ubuntu-18.04
+    steps:
+    - uses: actions/checkout@v1
+      with:
+        submodules: true
+    - uses: pulimento/hugo-action@master
+      with:
+        firebase-token: ${{ secrets.secret_firebase_token }}
