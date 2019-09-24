@@ -6,3 +6,5 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - uses: pulimento/hugo-action@master
+      with:
+        firebase-token: ${{ secrets.secret_firebase_token }}
