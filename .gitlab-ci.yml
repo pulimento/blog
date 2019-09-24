@@ -1,10 +1,11 @@
 image: pulimento/hugo-firebase
 
- variables:
-   GIT_STRATEGY: fetch
-   GIT_SUBMODULE_STRATEGY: normal
-   GIT_CLEAN_FLAGS: -ffdx
- before_script:
+variables:
+  GIT_STRATEGY: fetch
+  GIT_SUBMODULE_STRATEGY: normal
+  GIT_CLEAN_FLAGS: -ffdx
+  GIT_DEPTH: 200
+before_script:
    - git submodule update --init --recursive
 
 pages:
