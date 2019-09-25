@@ -20,8 +20,15 @@ relativeURLs           = true
 canonifyUrls           = true
 enableEmoji            = true
 DefaultContentLanguage = "en"
+enableRobotsTXT        = true
+paginate               = 3
+paginatePath           = "page"
+pygmentsCodeFencesGuessSyntax  = true
 
-#disqusShortname        = ""
+
+[params]
+  twitter_username = "pulimento"
+  google_analytics_id = "UA-27524292-4"
 
 [Languages]
 [Languages.en]
@@ -34,11 +41,6 @@ weight = 1
 angledQuotes = true
 hrefTargetBlank = true
 
-[indexes]
-  category = "categories"
+# remove all taxonomies, except tags
+[taxonomies]
   tag = "tags"
-
-[params]
-  google_analytics_id = "UA-27524292-4"
-  twitter_username = "pulimento"
-  paginate = 3
