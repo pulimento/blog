@@ -7,13 +7,15 @@ draft = false
 
 Here is a video work in Times Square (one of the busiest places in the world). This won't be possible with classic illumination rigs.
 
-{{< vimeo 355020680 >}}
+{{< vimeo 355020680 "42.48%" >}}
 
 😮 Those portable LEDs are stunning!
 
-## BONUS: Behind the cameras
+{{< verticalspace >}}
 
-{{< vimeo 360181747 >}}
+### BONUS: Behind the cameras
+
+{{< vimeo 360181747 "42.48%" >}}
 
 Awesome job from David Geffing and his crew
 
