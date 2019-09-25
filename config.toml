@@ -2,8 +2,8 @@ title                  = "Javi Pulido's blog"
 author                 = "Javi Pulido"
 baseUrl                = "https://javipulido.com"
 theme                  = "hugo-theme-pixyll-minimal"
-pygmentsCodefences = true
-pygmentsStyle = "pygments"
+pygmentsCodefences     = true
+pygmentsStyle          = "pygments"
 
 [permalinks]
   post = "/:filename/"
@@ -21,7 +21,7 @@ canonifyUrls           = true
 enableEmoji            = true
 DefaultContentLanguage = "en"
 enableRobotsTXT        = true
-paginate               = 3
+
 paginatePath           = "page"
 pygmentsCodeFencesGuessSyntax  = true
 
@@ -29,6 +29,7 @@ pygmentsCodeFencesGuessSyntax  = true
 [params]
   twitter_username = "pulimento"
   google_analytics_id = "UA-27524292-4"
+  paginate = 5
 
 [Languages]
 [Languages.en]
