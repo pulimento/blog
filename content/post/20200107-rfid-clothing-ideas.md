@@ -1,6 +1,6 @@
 +++
 title = "Ideas con RFID para organizar la ropa"
-date = "2020-01-07T18:30:00+02:00"
+date = "2020-01-07T10:00:00+02:00"
 tags = ["diy","rfid","esp32","arduino"]
 draft = false
 +++
