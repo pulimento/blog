@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>helou!</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+
+<!-- https://codepen.io/pasyuk/pen/vgQgyb -->
+<!-- https://github.com/liwenyip/hugo-easy-gallery -->
+
+{{ $baseURL := .Site.BaseURL }}
+
+<style>
+body {
+  width: 80%
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+}
+.grid > img {
+  max-height: 100px;
+  opacity: 0;
+}
+
+.grid img {
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.grid::after {
+  content: '';
+  flex-grow: 999999999;
+}
+
+.grid > figure {
+  margin: 4px;
+  background-color: white;
+  position: relative;
+  transition: all 1s ease-in-out;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transform: scale(1);
+  transition: all 0.4s ease-in-out;
+  position: relative;
+  z-index: 0;
+  border:0px solid black;
+}
+.grid > figure.loaded {
+  transform: scale(1);
+}
+.grid > figure.loaded img {
+  opacity: 0.99999;
+}
+.grid > figure.loaded:hover {
+  transform: scale(1.05);
+  z-index: 5;
+}
+
+.grid > figure > i {
+  display: block;
+}
+
+.grid > figure > img {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: auto;
+}
+</style>
+</head>
+
+<body>
+  <h1>Heeeelelo from layouts!!!</h1>
+
+  <div class="grid">
+
+    <!--
+    "flexGrow":      photo.width * 100 / photo.height,
+    "flexBasis":     photo.width * 240 / photo.height,
+    "paddingBottom": photo.height / photo.width * 100,
+    -->
+
+    {{ $resources := .Resources.Match "*.jpg" }}
+    {{ range sort $resources ".Name"}}
+    {{ $image := .}}
+    {{ $thumbImage := .Fill "200x smart"}}
+    {{/* $caption :=  .Name | replaceRE "\\..*" "" | humanize */}}
+
+    <!-- TODO thumbnails -->
+      
+    <img src="{{ $image.Permalink }}" imgW="{{ $image.Width }}" imgH="{{ $image.Height }}" >
+
+    {{ end }}
+
+    </div>
+      
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+
+    <script>
+      jQuery(function ($) {
+        $(".grid img").each(function (i) {
+          var src = $(this).attr("src"),
+            h = $(this).attr("imgH"),
+            w = $(this).attr("imgW"),
+            flexGrow = (w * 200) / h,
+            flexBasis = (w * 280) / h,
+            paddingBottom = (h / w) * 100;
+          $(this)
+            .attr("alt", "kitten-" + (i + 1))
+            .wrap("<figure>")
+            .before("<i>");
+
+          var figure = $(this).parent("figure");
+          figure
+            .css({
+              "flex-grow": flexGrow,
+              "flex-basis": flexBasis + "px"
+            })
+            .find("i")
+            .css({
+              "padding-bottom": paddingBottom + "%"
+            });
+
+            $('<a>',{
+              href: src,    
+              itemprop: 'contentUrl'
+            }).appendTo(figure);
+
+          var img = new Image();
+          img.onload = function () {
+            figure.addClass("loaded");
+          };
+          img.src = src;
+        });
+      });
+  </script>
+
+  {{ partial "load-photoswipe.html" . }}
+
+</body>
+</html>
