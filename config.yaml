@@ -1,0 +1,59 @@
+title    : "Javi Pulido's blog"
+author   : "Javi Pulido"
+baseUrl  : "https://javipulido.com"
+theme    : "hugo-theme-pixyll-minimal"
+
+# Pygments
+pygmentsCodefences: true
+pygmentsCodeFencesGuessSyntax: true
+pygmentsStyle: "pygments"
+
+permalinks:
+  posts: "/:title/"
+paginatePath: "page"
+
+# Directories
+archetypeDir: "archetypes"
+contentDir: "content"
+themesDir: "themes"
+layoutDir: "layouts"
+publishDir: "public"
+
+# Static configuration
+
+languageCode: "en"
+DefaultContentLanguage: "en"
+buildDrafts:  false
+relativeURLs: true
+canonifyUrls: true
+enableEmoji: true
+enableRobotsTXT: true
+copyright: "This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License."
+
+params:
+  twitter_username: "pulimento"
+  google_analytics_id: "UA-27524292-4"
+  paginate: 5
+
+outputs:
+  home:
+  - HTML
+  - RSS
+  page:
+  - HTML
+  - RSS
+
+outputFormats:
+  RSS:
+    mediatype: "application/rss"
+    baseName: "feed/index"
+
+languages:
+  - languages.en:
+      weight: 1
+  #- languages.es:
+  #    weight: 2
+
+# remove all taxonomies, except tags
+taxonomies:
+  tag: "tags"
