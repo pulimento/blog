@@ -1,81 +1,15 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>helou!</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
 
 <!-- https://codepen.io/pasyuk/pen/vgQgyb -->
 <!-- https://github.com/liwenyip/hugo-easy-gallery -->
 
-{{ $baseURL := .Site.BaseURL }}
-
-<style>
-body {
-  width: 80%
-}
-
-.grid {
-  display: flex;
-  flex-wrap: wrap;
-  position: relative;
-}
-.grid > img {
-  max-height: 100px;
-  opacity: 0;
-}
-
-.grid img {
-  opacity: 0;
-  transition: opacity 0.3s;
-}
-
-.grid::after {
-  content: '';
-  flex-grow: 999999999;
-}
-
-.grid > figure {
-  margin: 4px;
-  background-color: white;
-  position: relative;
-  transition: all 1s ease-in-out;
-  background-repeat: no-repeat;
-  background-size: cover;
-  transform: scale(1);
-  transition: all 0.4s ease-in-out;
-  position: relative;
-  z-index: 0;
-  border:0px solid black;
-}
-.grid > figure.loaded {
-  transform: scale(1);
-}
-.grid > figure.loaded img {
-  opacity: 0.99999;
-}
-.grid > figure.loaded:hover {
-  transform: scale(1.05);
-  z-index: 5;
-}
-
-.grid > figure > i {
-  display: block;
-}
-
-.grid > figure > img {
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: auto;
-}
-</style>
-</head>
+{{ partial "head_photos.html" . }}
 
 <body>
   <h1>Heeeelelo from layouts!!!</h1>
 
-  <div class="grid">
+  <div class="grid p4 p-responsive wrap">
 
     <!--
     "flexGrow":      photo.width * 100 / photo.height,
@@ -95,9 +29,7 @@ body {
 
     {{ end }}
 
-    </div>
-      
-    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+    </div> 
 
     <script>
       jQuery(function ($) {
@@ -138,6 +70,8 @@ body {
       });
   </script>
 
+<!-- TODO must remove it when removed from partial -->
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
   {{ partial "load-photoswipe.html" . }}
 
 </body>
