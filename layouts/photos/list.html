@@ -20,12 +20,12 @@
     {{ $resources := .Resources.Match "*.jpg" }}
     {{ range sort $resources ".Name"}}
     {{ $image := .}}
-    {{ $thumbImage := .Fill "200x smart"}}
+    {{ $thumbImage := .Resize "x512 q80"}}
     {{/* $caption :=  .Name | replaceRE "\\..*" "" | humanize */}}
 
     <!-- TODO thumbnails -->
       
-    <img src="{{ $image.Permalink }}" imgW="{{ $image.Width }}" imgH="{{ $image.Height }}" >
+    <img src="{{ $thumbImage.Permalink }}" imgW="{{ $image.Width }}" imgH="{{ $image.Height }}" >
 
     {{ end }}
 
