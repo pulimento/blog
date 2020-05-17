@@ -31,43 +31,40 @@
 
     </div> 
 
+
     <script>
-      jQuery(function ($) {
-        $(".grid img").each(function (i) {
-          var src = $(this).attr("src"),
-            h = $(this).attr("imgH"),
-            w = $(this).attr("imgW"),
-            flexGrow = (w * 200) / h,
-            flexBasis = (w * 280) / h,
-            paddingBottom = (h / w) * 100;
-          $(this)
-            .attr("alt", "kitten-" + (i + 1))
-            .wrap("<figure>")
-            .before("<i>");
+      var elements = document.querySelectorAll(".grid img");        
+      Array.prototype.forEach.call(elements, function (element, i) {  
+          var src = element.getAttribute("src"),
+          h = element.getAttribute("imgH"),
+          w = element.getAttribute("imgW"),
+          flexGrow = (w * 200) / h,
+          flexBasis = (w * 280) / h,
+          paddingBottom = (h / w) * 100;
 
-          var figure = $(this).parent("figure");
-          figure
-            .css({
-              "flex-grow": flexGrow,
-              "flex-basis": flexBasis + "px"
-            })
-            .find("i")
-            .css({
-              "padding-bottom": paddingBottom + "%"
-            });
+          element.setAttribute("alt", "kitten-" + (i + 1))
 
-            $('<a>',{
-              href: src,    
-              itemprop: 'contentUrl'
-            }).appendTo(figure);
+          var parentFigure = document.createElement('figure');
+          element.parentNode.insertBefore(parentFigure, element);
+          parentFigure.appendChild(element);
+
+          var inode = document.createElement('i');
+          parentFigure.insertBefore(inode, element);
+
+          parentFigure.style.cssText = "flex-grow:" + flexGrow + ";flex-basis: " + flexBasis + "px";
+          inode.style.cssText = "padding-bottom:" + paddingBottom + "%";
+
+          var link = document.createElement('a');
+          link.href = src;
+          link.setAttribute('itemprop', 'contentUrl');
+          parentFigure.appendChild(link);
 
           var img = new Image();
           img.onload = function () {
-            figure.addClass("loaded");
+            parentFigure.classList.add("loaded");
           };
           img.src = src;
-        });
-      });
+      });        
   </script>
 
 <!-- TODO must remove it when removed from partial -->
