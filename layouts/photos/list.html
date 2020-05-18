@@ -19,56 +19,49 @@
 
     {{ $resources := .Resources.Match "*.jpg" }}
     {{ range sort $resources ".Name"}}
-    {{ $image := .}}
+    {{ $image := .}} <!-- TODO resize image? now serving original ones -->
     {{ $thumbImage := .Resize "x512 q80"}}
-    {{/* $caption :=  .Name | replaceRE "\\..*" "" | humanize */}}
-
-    <!-- TODO thumbnails -->
+    {{ $caption :=  .Name | replaceRE "\\..*" "" | humanize }}
       
-    <img src="{{ $thumbImage.Permalink }}" imgW="{{ $image.Width }}" imgH="{{ $image.Height }}" >
+    <img src="{{ $thumbImage.Permalink }}" alt="{{ $caption }}" thumbW="{{ $thumbImage.Width }}" thumbH="{{ $thumbImage.Height }}" fullImage="{{ $image.Permalink }}" imgW="{{ $image.Width }}" imgH="{{ $image.Height }}">
 
     {{ end }}
 
-    </div> 
-
+    </div>
 
     <script>
-      var elements = document.querySelectorAll(".grid img");        
-      Array.prototype.forEach.call(elements, function (element, i) {  
-          var src = element.getAttribute("src"),
-          h = element.getAttribute("imgH"),
-          w = element.getAttribute("imgW"),
+      var gridImages = document.querySelectorAll(".grid img");        
+      Array.prototype.forEach.call(gridImages, function (gridImage) {  
+          var src = gridImage.getAttribute("src"),
+          h = gridImage.getAttribute("thumbH"),
+          w = gridImage.getAttribute("thumbW"),
           flexGrow = (w * 200) / h,
           flexBasis = (w * 280) / h,
           paddingBottom = (h / w) * 100;
 
-          element.setAttribute("alt", "kitten-" + (i + 1))
-
           var parentFigure = document.createElement('figure');
-          element.parentNode.insertBefore(parentFigure, element);
-          parentFigure.appendChild(element);
+          gridImage.parentNode.insertBefore(parentFigure, gridImage);
+          parentFigure.appendChild(gridImage);
 
           var inode = document.createElement('i');
-          parentFigure.insertBefore(inode, element);
+          parentFigure.insertBefore(inode, gridImage);
 
           parentFigure.style.cssText = "flex-grow:" + flexGrow + ";flex-basis: " + flexBasis + "px";
           inode.style.cssText = "padding-bottom:" + paddingBottom + "%";
 
           var link = document.createElement('a');
-          link.href = src;
+          link.href = gridImage.getAttribute('fullImage');
           link.setAttribute('itemprop', 'contentUrl');
           parentFigure.appendChild(link);
 
           var img = new Image();
           img.onload = function () {
-            parentFigure.classList.add("loaded");
+            parentFigure.classList.add('loaded');
           };
           img.src = src;
       });        
   </script>
 
-<!-- TODO must remove it when removed from partial -->
-<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
   {{ partial "load-photoswipe.html" . }}
 
 </body>
