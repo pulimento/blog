@@ -1,68 +1,61 @@
-<!DOCTYPE html>
-<html>
+{{- define "main" -}}
 
 <!-- https://codepen.io/pasyuk/pen/vgQgyb -->
 <!-- https://github.com/liwenyip/hugo-easy-gallery -->
 
-{{ partial "head_photos.html" . }}
+<div class="grid p4 p-responsive wrap">
 
-<body>
-  <h1>Heeeelelo from layouts!!!</h1>
+  <!--
+  "flexGrow":      photo.width * 100 / photo.height,
+  "flexBasis":     photo.width * 240 / photo.height,
+  "paddingBottom": photo.height / photo.width * 100,
+  -->
 
-  <div class="grid p4 p-responsive wrap">
+  {{ $resources := .Resources.Match "*.jpg" }}
+  {{ range sort $resources ".Name"}}
+  {{ $image := .}} <!-- TODO resize image? now serving original ones -->
+  {{ $thumbImage := .Resize "x512 q80"}}
+  {{ $caption :=  .Name | replaceRE "\\..*" "" | humanize }}
+    
+  <img src="{{ $thumbImage.Permalink }}" alt="{{ $caption }}" thumbW="{{ $thumbImage.Width }}" thumbH="{{ $thumbImage.Height }}" fullImage="{{ $image.Permalink }}" imgW="{{ $image.Width }}" imgH="{{ $image.Height }}">
 
-    <!--
-    "flexGrow":      photo.width * 100 / photo.height,
-    "flexBasis":     photo.width * 240 / photo.height,
-    "paddingBottom": photo.height / photo.width * 100,
-    -->
+  {{ end }}
 
-    {{ $resources := .Resources.Match "*.jpg" }}
-    {{ range sort $resources ".Name"}}
-    {{ $image := .}} <!-- TODO resize image? now serving original ones -->
-    {{ $thumbImage := .Resize "x512 q80"}}
-    {{ $caption :=  .Name | replaceRE "\\..*" "" | humanize }}
-      
-    <img src="{{ $thumbImage.Permalink }}" alt="{{ $caption }}" thumbW="{{ $thumbImage.Width }}" thumbH="{{ $thumbImage.Height }}" fullImage="{{ $image.Permalink }}" imgW="{{ $image.Width }}" imgH="{{ $image.Height }}">
+  </div>
 
-    {{ end }}
+  <script>
+    var gridImages = document.querySelectorAll(".grid img");        
+    Array.prototype.forEach.call(gridImages, function (gridImage) {  
+        var src = gridImage.getAttribute("src"),
+        h = gridImage.getAttribute("thumbH"),
+        w = gridImage.getAttribute("thumbW"),
+        flexGrow = (w * 200) / h,
+        flexBasis = (w * 280) / h,
+        paddingBottom = (h / w) * 100;
 
-    </div>
+        var parentFigure = document.createElement('figure');
+        gridImage.parentNode.insertBefore(parentFigure, gridImage);
+        parentFigure.appendChild(gridImage);
 
-    <script>
-      var gridImages = document.querySelectorAll(".grid img");        
-      Array.prototype.forEach.call(gridImages, function (gridImage) {  
-          var src = gridImage.getAttribute("src"),
-          h = gridImage.getAttribute("thumbH"),
-          w = gridImage.getAttribute("thumbW"),
-          flexGrow = (w * 200) / h,
-          flexBasis = (w * 280) / h,
-          paddingBottom = (h / w) * 100;
+        var inode = document.createElement('i');
+        parentFigure.insertBefore(inode, gridImage);
 
-          var parentFigure = document.createElement('figure');
-          gridImage.parentNode.insertBefore(parentFigure, gridImage);
-          parentFigure.appendChild(gridImage);
+        parentFigure.style.cssText = "flex-grow:" + flexGrow + ";flex-basis: " + flexBasis + "px";
+        inode.style.cssText = "padding-bottom:" + paddingBottom + "%";
 
-          var inode = document.createElement('i');
-          parentFigure.insertBefore(inode, gridImage);
+        var link = document.createElement('a');
+        link.href = gridImage.getAttribute('fullImage');
+        link.setAttribute('itemprop', 'contentUrl');
+        parentFigure.appendChild(link);
 
-          parentFigure.style.cssText = "flex-grow:" + flexGrow + ";flex-basis: " + flexBasis + "px";
-          inode.style.cssText = "padding-bottom:" + paddingBottom + "%";
+        var img = new Image();
+        img.onload = function () {
+          parentFigure.classList.add('loaded');
+        };
+        img.src = src;
+    });        
+</script>
 
-          var link = document.createElement('a');
-          link.href = gridImage.getAttribute('fullImage');
-          link.setAttribute('itemprop', 'contentUrl');
-          parentFigure.appendChild(link);
+{{ partial "load-photoswipe.html" . }}
 
-          var img = new Image();
-          img.onload = function () {
-            parentFigure.classList.add('loaded');
-          };
-          img.src = src;
-      });        
-  </script>
-
-  {{ partial "load-photoswipe.html" . }}
-
-</body>
-</html>
+{{- end -}}
