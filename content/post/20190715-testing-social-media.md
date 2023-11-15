@@ -11,11 +11,10 @@ Let's try to embed some random tweet here
 
 And an Instagram post
 
+> The instagram post was removed, don't want to go to the nonsense of creating an Instagram Dev App with a zillion of permissions just to embed an insta post
+
+<!--
 {{< instagram Bz8eijVnE9r >}}
+-->
 
-Another tweet!
-
-{{< tweet 1150655812747976710 >}}
-
-Really easy!! 
-
+Really easy!!

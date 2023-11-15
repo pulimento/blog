@@ -48,8 +48,10 @@ outputFormats:
     mediatype: "application/rss"
     baseName: "feed/index"
 
+defaultContentLanguage: en
 languages:
-  - languages.en:
+  en:
+      languageName: English
       weight: 1
   #- languages.es:
   #    weight: 2

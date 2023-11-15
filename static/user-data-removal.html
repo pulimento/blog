@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>    
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="theme-color" content="#487637">
+
+  <title>Eliminación de datos de usuario / User data deletion</title>
+
+  <style>
+    html, body {
+      overflow-x: hidden;
+    }
+    .footer-small {
+      font-size: 0.6em;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div>
+    <header>
+      <h2>Eliminación de datos de usuario / User data deletion</h2>
+    </header>
+
+    <br/>
+    <p>Esta aplicación o web no recopila ni comparte tus datos personales, por lo que no tiene política de eliminación de datos de usuario. No hay datos que borrar.</p>
+    <p>This app or site doesn't log or share your personal information, so it doesn't have an user data deletion policy. There is no user data to delete.</p>
+    <br/>
+
+    <footer>
+        <p class="footer-small">(C) <span id="currentYear"></span> Javi Pulido</p>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+  </script>
+
+  <!-- Last but not least, let's gather some basic and privacy-friendly analytics -->
+  <script data-goatcounter="https://no-data-collected-privacy-policy.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
